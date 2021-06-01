@@ -1,22 +1,27 @@
+const user = require('../models/user');
 const userModel = require('../models/user');
 
-async function register(req,res) { 
-    const {username , password , rePassword} = req.body
-    if (password !== rePassword) {
-        throw ({message : "Passwords do not match!"});
+async function register(userData) { 
+    const {username , password , RePassword} = userData;
+    console.log(userData);
+    if(username === '') { 
+        throw({message : "Username is required!"});
     }
     if(password === '') { 
-        throw ({message : "Passwords is required!"});
+        throw({message : "Password is required!"});
+    }
+    if(password !== RePassword) { 
+        throw({message : "Passowrd do not match!"});
     }
 
-    const isUserExists = await userModel.findOne({ username: username.toLowerCase() });
-    if (isUserExists) {
-        throw ({message : "This user already exists!"});
+    const isUserExist = await userModel.findOne({username : username.toLowerCase()});
+    if(isUserExist) { 
+        throw({message : "This user already exist!"});
     }
-    const user = new userModel({ username: username.toLowerCase(), password : password });
 
-    return user.save();
-
+    const user = new userModel({username : username.toLowerCase(),password});
+    return  user.save();
+   
 }
 
 module.exports = { 
