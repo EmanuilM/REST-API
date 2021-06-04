@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const config = require('../config/config');
 
 const userSchema = new mongoose.Schema({
     username :  { 
@@ -25,7 +26,6 @@ userSchema.pre('save' , function(next) {
     .catch(err => {
         console.log(err);
     })
-
 });
 
 module.exports = mongoose.model('user' , userSchema);

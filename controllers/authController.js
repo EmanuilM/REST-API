@@ -14,8 +14,5 @@ router.post('/register' , async (req,res) => {
     }
 })
 
-router.post('/test' , (req,res) => { 
-    res.send(req.body)
-})
 
 module.exports = router;

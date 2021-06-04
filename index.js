@@ -4,15 +4,9 @@ const router = require('./router');
 const cors = require('cors');
 const config = require('./config/config');
 
-
-
-
-require('dotenv').config();
 require('./config/db');
 require('./config/express')(app);
 
-
-console.log(process.env.NODE_ENV);
 
 
 app.use(cors({
@@ -22,4 +16,4 @@ app.use(cors({
 app.use(router);
 
 
-app.listen(config.PORT , () => console.log(`Server is listening on port ${config.PORT}`));
+app.listen(3000 , () => console.log(`Server is listening on port 3000`));
