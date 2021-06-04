@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const uri = 'mongodb://localhost:27017/CarSite';
-mongoose.connect(uri , { useNewUrlParser: true  , useUnifiedTopology: true});
+mongoose.connect(process.env.DB_CONNECTION_LINK , { useNewUrlParser: true  , useUnifiedTopology: true});
 
 const db = mongoose.connection;
 db.on('error' , console.error.bind(console, 'connection error'));
