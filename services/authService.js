@@ -18,12 +18,12 @@ async function register(userData) {
         throw({message : "Passowrd do not match!"});
     }
 
-    const isUserExist = await userModel.findOne({username : username.toLowerCase()});
+    const isUserExist = await userModel.findOne({username : username.toLowerCase().trim() , password : password.trim()});
     if(isUserExist) { 
         throw({message : "This user already exist!"});
     }
 
-    const user = new userModel({username : username.toLowerCase() , password});
+    const user = new userModel({username : username.toLowerCase().trim() , password : password.trim()});
     return  user.save();
    
 }
@@ -41,12 +41,12 @@ async function login(userData) {
         throw({message : "Password is required!"});
     }
 
-    const isUserExists = await userModel.findOne({ username: userData.username.toLowerCase() });
+    const isUserExists = await userModel.findOne({ username: username.toLowerCase().trim() });
     if (!isUserExists) {
         throw ({message :'This user does not exists!'});
     }
 
-    const isPasswordMatch = await bcrypt.compare(userData.password, isUserExists.password);
+    const isPasswordMatch = await bcrypt.compare(password.trim(), isUserExists.password.trim());
     if (!isPasswordMatch) {
         throw Error('Invalid Password!');
     }
