@@ -5,7 +5,7 @@ const cors = require('cors');
 const config = require('./config/config');
 const path = require('path');
 
-const port = process.env.port || 7030;
+// const port = process.env.port || 7030;
 
 require('./config/db');
 require('./config/express')(app);
@@ -28,5 +28,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/testMaterial/index.html'));
   });
 
-console.log(`Current port is ${process.env.PORT}`)
-app.listen(port , () => console.log(`Server is listening on port ${port}`));
+console.log(`Current port is ${process.env.PORT}`);
+console.log(`ENV IS : ${process.env.NODE_ENV.PORT}`);
+app.listen(process.env.PORT , () => console.log(`Server is listening on port ${process.env.PORT}`));
