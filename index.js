@@ -4,6 +4,8 @@ const router = require('./router');
 const cors = require('cors');
 const config = require('./config/config');
 
+
+
 require('./config/db');
 require('./config/express')(app);
 
@@ -15,5 +17,5 @@ app.use(cors({
 }))
 app.use(router);
 
-
-app.listen(config.port , () => console.log(`Server is listening on port ${config.port}`));
+console.log(`Current port is ${process.env.PORT}`)
+app.listen(process.env.PORT , () => console.log(`Server is listening on port ${process.env.PORT}`));

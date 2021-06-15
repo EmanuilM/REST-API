@@ -1,0 +1,21 @@
+<form #f="ngForm" (ngSubmit)="registerHandler(f.value)" id="registerForm">
+    <div>
+        <label for="">Username</label>
+        <input #inputUsername="ngModel" type="text" name="username" id="username" ngModel required>
+        
+    </div>
+
+    <div>
+        <label for="">Password</label>
+        <input #inputPassword="ngModel" type="password" name="password" ngModel required>
+    </div>
+
+    <div>
+        <label for="">RePassword</label>
+        <input #inputRePassword="ngModel" type="password" name="RePassword" ngModel required>
+    </div>
+
+    <button>Register</button>
+
+    {{f.value | json}}
+</form>

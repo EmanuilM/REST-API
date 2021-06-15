@@ -23,10 +23,13 @@ async function createCarOffer(data) {
 
     const offerDetails = new offerModel(data);
     offerDetails.save();
+}
 
-
+async function getAllOffers() { 
+    return await offerModel.find();
 }
 
 module.exports = {
-    createCarOffer
+    createCarOffer,
+    getAllOffers,
 }

@@ -1,0 +1,16 @@
+<form #f="ngForm" (ngSubmit)="loginHandler(f.value)">
+    <div class="container">
+        <div>
+            <label>Username</label>
+            <input #usernameInput="ngModel" type="text" name="username" ngModel>
+        </div>
+        <div>
+            <label>Password</label>
+            <input #passwordInput="ngModel" type="password" name="password" ngModel>
+        </div>
+
+        <button>Login</button>
+    </div>
+
+    {{f.value | json}}
+</form>
