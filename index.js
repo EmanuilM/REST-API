@@ -12,7 +12,7 @@ require('./config/express')(app);
 
 console.log(process.env.NODE_ENV);
 // app.use(express.static(process.cwd()+"/angular-src/dist/testMaterial/"));
-app.use(express.static(path.join(__dirname , 'dist')))
+app.use(express.static(path.join(__dirname , 'dist/testMaterial')))
 app.use(cors({
     origin: config.origin,
     credentials: true,
