@@ -11,7 +11,7 @@ const config = {
     production: {
         PORT: process.env.PORT || 80,
         origin: [],
-        DB_CONNECTION : 'mongodb+srv://admin:<admin>@test.ijzqf.mongodb.net/testDB?retryWrites=true&w=majoritya',
+        DB_CONNECTION : 'mongodb+srv://admin:<admin>@test.ijzqf.mongodb.net/testDB?retryWrites=true&w=majority',
         SALT_ROUNDS : 10,
         SECRET_WORD : null,
     }
