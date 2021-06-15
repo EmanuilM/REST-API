@@ -29,5 +29,4 @@ app.get('*', (req, res) => {
   });
 
 console.log(`Current port is ${process.env.PORT}`);
-console.log(`ENV IS : ${config.config[process.env.NODE_ENV]}`);
 app.listen(process.env.PORT , () => console.log(`Server is listening on port ${process.env.PORT}`));
