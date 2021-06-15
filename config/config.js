@@ -11,7 +11,7 @@ const config = {
         origin: ['https://still-escarpment-20636.herokuapp.com/'],
         DB_CONNECTION : 'mongodb+srv://test:test@test.ijzqf.mongodb.net/testAtlas?retryWrites=true&w=majority',
         SALT_ROUNDS : 10,
-        SECRET_WORD : null,
+        SECRET_WORD : 'WEBTOKEN',
     }
 };
 
