@@ -10,7 +10,7 @@ const config = {
     },
     production: {
         PORT: process.env.PORT || 80,
-        origin: [],
+        origin: ['https://still-escarpment-20636.herokuapp.com/'],
         DB_CONNECTION : 'mongodb+srv://admin:<admin>@test.ijzqf.mongodb.net/testDB?retryWrites=true&w=majority',
         SALT_ROUNDS : 10,
         SECRET_WORD : null,
