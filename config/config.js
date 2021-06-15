@@ -1,5 +1,3 @@
-const env = process.env.NODE_ENV || 'development';
-
 const config = {
     development: {
         PORT: process.env.PORT || 3000,
@@ -11,13 +9,13 @@ const config = {
     production: {
         PORT: process.env.PORT || 80,
         origin: ['https://still-escarpment-20636.herokuapp.com/'],
-        DB_CONNECTION : 'mongodb+srv://admin:<admin>@test.ijzqf.mongodb.net/testDB?retryWrites=true&w=majority',
+        DB_CONNECTION : 'mongodb+srv://test:test@test.ijzqf.mongodb.net/testAtlas?retryWrites=true&w=majority',
         SALT_ROUNDS : 10,
         SECRET_WORD : null,
     }
 };
 
-module.exports = config[env.trim()];
+module.exports = config[process.env.NODE_ENV.trim()];
 
 
 

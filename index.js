@@ -28,5 +28,6 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/testMaterial/index.html'));
   });
 
-console.log(`Current port is ${process.env.PORT}`);
-app.listen(process.env.PORT , () => console.log(`Server is listening on port ${process.env.PORT}`));
+ console.log(config)
+console.log(`Current port is ${config.PORT}`);
+app.listen(config.PORT , () => console.log(`Server is listening on port ${config.PORT}`));
