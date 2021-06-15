@@ -5,7 +5,7 @@ const cors = require('cors');
 const config = require('./config/config');
 const path = require('path');
 
-const port = process.env.port || 8080;
+const port = process.env.port || 7030;
 
 require('./config/db');
 require('./config/express')(app);
