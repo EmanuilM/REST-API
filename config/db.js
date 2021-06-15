@@ -7,7 +7,7 @@
 // db.once('open' , () => console.log('Conntected to database!'));
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://admin:<password>@test.ijzqf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://admin:<admin>@test.ijzqf.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
