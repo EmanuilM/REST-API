@@ -12,14 +12,6 @@ const config = {
     },
     production: {
         PORT: process.env.PORT || 80,
-        origin: ['https://still-escarpment-20636.herokuapp.com/'],
-        DB_CONNECTION : 'mongodb+srv://test:test@test.ijzqf.mongodb.net/testAtlas?retryWrites=true&w=majority',
-        SALT_ROUNDS : 10,
-        SECRET_WORD : 'WEBTOKEN',
-        COOKIE_NAME : "SESSION_TOKEN",
-        CLOUD_NAME: "dtdz0i6at",
-        CLOUDINARY_API_KEY: "936923232219936",
-        CLOUDINARY_API_SECRET: "16BRo4xqGmyhx7TJbPoAb3hA6Mc",
     }
 };
 
