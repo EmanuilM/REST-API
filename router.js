@@ -3,9 +3,11 @@ const router = Router();
 
 const authController = require('./controllers/authController');
 const offerController = require('./controllers/offerController');
+const userController = require('./controllers/userController');
 
-router.use('/auth' , authController);
-router.use('/offer' , offerController);
+router.use('/api/auth' , authController);
+router.use('/api/offers' , offerController);
+router.use('/api/user' , userController);
 
 
 
